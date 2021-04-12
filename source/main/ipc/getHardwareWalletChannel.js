@@ -542,7 +542,7 @@ export const handleHardwareWalletRequests = async (
         throw new Error('Ledger device not connected');
       }
       const extendedPublicKey = await deviceConnection.getExtendedPublicKey(
-        utils.str_to_path(path)
+        { path: utils.str_to_path(path) }
       );
       const deviceSerial = await deviceConnection.getSerial();
       return Promise.resolve({

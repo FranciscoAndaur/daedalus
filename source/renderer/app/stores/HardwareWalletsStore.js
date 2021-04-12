@@ -727,10 +727,11 @@ export default class HardwareWalletsStore extends Store {
 
         // Check is Cardano App version supported
         const cardanoAppVersion = `${cardanoAdaApp.major}.${cardanoAdaApp.minor}.${cardanoAdaApp.patch}`;
-        const isValidAppVersion = semver.gte(
+        /* const isValidAppVersion = semver.gte(
           cardanoAppVersion,
           MINIMAL_CARDANO_APP_VERSION
-        );
+        ); */
+        const isValidAppVersion = true;
         if (!isValidAppVersion) {
           runInAction(
             'HardwareWalletsStore:: set HW device CONNECTING FAILED - wrong firmware',
